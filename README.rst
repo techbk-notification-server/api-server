@@ -8,14 +8,14 @@ api-server
 Create Database:
 ================
 
-Step 1::
+Step 1:
     $ cd api_server
     $ python3 manage.py makemigrations notifications
 
-Step 2::
+Step 2:
     $ python3 manage.py sqlmigrate notifications 0001
 
-Step 3::
+Step 3:
     $ python3 manage.py migrate
 
 
