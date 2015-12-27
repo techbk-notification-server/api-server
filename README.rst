@@ -24,5 +24,6 @@ Step 3::
 
 Creating an admin user
 ======================
+::
 
     $ python3 manage.py createsuperuser
