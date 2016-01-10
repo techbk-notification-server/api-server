@@ -13,12 +13,19 @@ class NotificationsView(LoginRequiredMixin, generic.ListView):
     # def get_queryset(self):
 
 
-# from django.http.request import HttpRequest
+from django.http.request import HttpRequest
 
 class JsonNotificationsView(LoginRequiredMixin, generic.View):
     login_url = '/login/'
 
     def get(self, request, *args, **kwargs):
+        """
+
+        :param request:
+        :param args:
+        :param kwargs:
+        :return: Json Data
+        """
         notis = NewsNotification.objects.filter(start_url__user=request.user, start_url__userweb__status=True)
         data = [{"start_url": x.start_url.description, "title": x.title, "url": x.url, "status": x.checked}
                 for x in notis]
